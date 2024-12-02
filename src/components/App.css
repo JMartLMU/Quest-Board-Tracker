@@ -1,6 +1,8 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background-image: url(../assets/Background.jpg);
+  background-size: contain;
 }
 
 .App {
@@ -9,6 +11,10 @@ body {
   grid-template-columns: 250px auto;
   height: 100vh;
   overflow: scroll;
+  background-image: url(../assets/Board.jpg);
+  background-size: min(90dvh, 90dvw);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 header {
@@ -37,10 +43,11 @@ nav,
 article {
   height: 100%;
   padding: 10px;
+  width: 10dvw;
 }
 
 nav {
-  background-color: #dee9ff;
+  background-color: #dee9ff7e;
 }
 
 nav p:hover {

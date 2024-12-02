@@ -1,7 +1,5 @@
-# A Blog Starter App
+# A Quest Board for my Dungeons and Dragons group
 
-This is a trivial blog app, started with Vite.
+This is a web app diplaying all the current quests the party that I dm for has taken on. 
 
-It works entirely within memory, so reloads blow everything away except for the first two mock articles.
-
-This repo is designed for you to fork and extend with (1) better CSS and (2) a real back end, with authentication and a database.
+It is built in Vite and currently allows the abiltity to read for all users and write for certain users.
