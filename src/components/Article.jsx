@@ -1,6 +1,8 @@
+import Draggable, {DraggableCore} from 'react-draggable';
+
 export default function Article({ article }) {
   return (
-    <article>
+    <Draggable>
       {!article ? (
         <p>No article selected</p>
       ) : (
@@ -10,6 +12,6 @@ export default function Article({ article }) {
           <p className="body">{article.body}</p>
         </section>
       )}
-    </article>
+    </Draggable>
   )
 }

@@ -18,7 +18,7 @@ body {
 }
 
 header {
-  display: flex;
+  display: flex;  
   justify-content: space-between;
   background-color: black;
   color: white;
@@ -44,6 +44,10 @@ article {
   height: 100%;
   padding: 10px;
   width: 10dvw;
+  background-image: url(../assets/Scroll.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  max-width: max(10vh, 10vw);
 }
 
 nav {
