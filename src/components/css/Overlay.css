@@ -1,0 +1,44 @@
+/* Fullscreen Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it covers the whole page */
+  }
+
+  .overlay .overlay-content {
+    background-image: url(./Assets/Scroll.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60vh;
+    height: 60vh;
+    padding: 10vh 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+  }
+
+  form {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    height: 45vh;
+  }
+
+form input,
+form textarea {
+  margin-bottom: 10px;
+  width: 38vh;
+  background-color: transparent;
+  border-color: transparent;
+}

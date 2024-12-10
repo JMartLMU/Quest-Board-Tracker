@@ -1,6 +1,6 @@
 export default function Nav({ articles, setArticle }) {
   return (
-    <nav>
+    <div>
       {!articles
         ? "No articles"
         : articles.map((a) => (
@@ -8,6 +8,6 @@ export default function Nav({ articles, setArticle }) {
               {a.title}
             </p>
           ))}
-    </nav>
+    </div>
   )
 }
