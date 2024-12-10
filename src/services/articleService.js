@@ -9,21 +9,18 @@ import {
   getDocs,
   addDoc,
   orderBy,
-  limit,
-  Timestamp,
 } from "firebase/firestore"
 
-export async function createArticle({ title, body }) {
-  const data = { title, body, date: Timestamp.now() }
+export async function createArticle({ title, body, danger, reward }) {
+  const data = { title, body, danger, reward }
   const docRef = await addDoc(collection(db, "articles"), data)
   return { id: docRef.id, ...data }
 }
 
-// NOT FINISHED: This only gets the first 20 articles. In a real app,
-// you would implement pagination.
+// Maybe implement pagination.
 export async function fetchArticles() {
   const snapshot = await getDocs(
-    query(collection(db, "articles"), orderBy("date", "desc"), limit(20))
+    query(collection(db, "articles"), orderBy("danger", "desc"))
   )
   return snapshot.docs.map((doc) => ({
     id: doc.id,

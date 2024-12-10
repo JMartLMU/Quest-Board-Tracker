@@ -20,19 +20,6 @@ header {
   padding: 10px 5px;
 }
 
-form {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-form input,
-form textarea {
-  margin-bottom: 10px;
-  width: 300px;
-}
-
 nav,
 article {
   height: 100%;

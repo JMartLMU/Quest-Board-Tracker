@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react"
-import Nav from "./Nav"
-import Article from "./Article"
-import ArticleEntry from "./ArticleEntry"
 import { SignIn, SignOut } from "./Auth"
 import { useAuthentication } from "../services/authService"
 import { fetchArticles, createArticle } from "../services/articleService"
-import "./App.css"
+import WritingOverlay from "./WritingOverlay"
+import ArticleOverlay from "./ArticleList"
+import "./css/App.css"
+import QuestBoard from "./QuestBoard"
 
 export default function App() {
   const [articles, setArticles] = useState([])
   const [article, setArticle] = useState(null)
-  const [writing, setWriting] = useState(false)
   const user = useAuthentication()
 
   // This is a trivial app, so just fetch all the articles only when
@@ -20,36 +19,31 @@ export default function App() {
   useEffect(() => {
     if (user) {
       fetchArticles().then(setArticles)
+      console.log(articles)
     }
   }, [user])
 
   // Update the "database" *then* update the internal React state. These
   // two steps are definitely necessary.
-  function addArticle({ title, body }) {
-    createArticle({ title, body }).then((article) => {
+  function addArticle({ title, body, danger, reward }) {
+    createArticle({ title, body, danger, reward }).then((article) => {
       setArticle(article)
       setArticles([article, ...articles])
-      setWriting(false)
+      console.log(articles)
     })
   }
 
   return (
     <div className="App">
       <header>
-        Blog
-        {user && <button onClick={() => setWriting(true)}>New Article</button>}
-        {!user ? <SignIn /> : <SignOut />}
+      <ArticleOverlay user={user} list={articles} quest={article} setArticle={setArticle}/>
+      <WritingOverlay addArticle={addArticle}/>
+      {!user ? <SignIn /> : <SignOut />}
       </header>
 
-      {!user ? "" : <Nav articles={articles} setArticle={setArticle} />}
+      {!user ? 
+        <p>Please Sign-In to View Quests</p> : <QuestBoard board={articles}/>}
 
-      {!user ? (
-        ""
-      ) : writing ? (
-        <ArticleEntry addArticle={addArticle} />
-      ) : (
-        <Article article={article} />
-      )}
     </div>
   )
 }
