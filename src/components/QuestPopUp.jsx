@@ -1,22 +1,21 @@
 import React, { useState } from "react";
-import Nav from "./Nav";
-import Article from "./Article";
 import './css/Overlay.css'
 
-export default function ArticleOverlay({ user, list, quest, setArticle }) {
+export default function PopUpOverlay({ quest }) {
   const [showOverlay, setShowOverlay] = useState(false);
   
   return (
     <>
-      <button onClick={() => setShowOverlay(true)}>View Quest List</button>
+      <button onClick={() => setShowOverlay(true)}>ShowDetails</button>
 
       {/* Overlay */}
       {showOverlay && (
         <>
           <div className="overlay">
-            <div className="overlay-content">
-              <button onClick={() => setShowOverlay(false)}>Close</button>
-              {!user ? "" : <Nav articles={list} />}
+            <div className="overlay-content2">
+              <h2>{quest.title}</h2>
+              <h3>Details</h3>
+              <p>{quest.body}</p>
               <button onClick={() => setShowOverlay(false)}>Close</button>
             </div>
           </div>

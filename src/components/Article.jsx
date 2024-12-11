@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Draggable from "react-draggable"
+import PopUpOverlay from './QuestPopUp';
 import Skull from "./css/assets/Skull.png"
 import Coin from "./css/assets/Coin.png"
 
@@ -8,12 +9,12 @@ export default function Article({ article, number }) {
   const coinCount = Array(parseInt(article.reward)+ 1).fill(0).map((_, index) => index + 1);
 
   const generateRandomNumber = (max) => {
-    return Math.floor(Math.random() * (max + 1)); // Random int between 0 and max (inclusive)
+    return Math.floor(Math.random() * (max + 1));
   };
   
   return (
     <Draggable
-      defaultPosition={{x: generateRandomNumber((number/2) * 100), y: generateRandomNumber(200)}}
+      defaultPosition={{x: generateRandomNumber((number/2) * 50), y: generateRandomNumber(200)}}
       bound= "parent"
     >
       {!article ? (
@@ -21,6 +22,7 @@ export default function Article({ article, number }) {
       ) : (
         <section id="quest">
           <h2>{article.title}</h2>
+          <PopUpOverlay quest={article}/>
           <div>
             {skullCount.map(index => 
               <img id="img" key={index} src={Skull} />
