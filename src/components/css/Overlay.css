@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
     z-index: 1000; /* Ensure it covers the whole page */
-  }
+}
 
 .overlay .overlay-content {
   background-image: url(./Assets/Scroll.png);
@@ -42,7 +42,15 @@
   color: black;
   overflow-y: auto;
   overflow-x: hidden;
+  word-break: break-all;
 }
+
+.overlay .overlay-content2 p {
+  padding: 0vh 5vh;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
 
 form {
   padding: 10px;

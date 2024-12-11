@@ -9,7 +9,7 @@ body {
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   gap: 8vh;
 }
@@ -22,20 +22,6 @@ header {
   color: white;
   grid-column: 1 / span 2;
   padding: 10px 5px;
-}
-
-nav,
-article {
-  height: 100%;
-  padding: 10px;
-}
-
-article .date {
-  font-style: italic;
-}
-
-article .body {
-  white-space: break-spaces;
 }
 
 .error {

@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import Draggable from "react-draggable"
 import PopUpOverlay from './QuestPopUp';
 import Skull from "./css/assets/Skull.png"
@@ -21,7 +20,7 @@ export default function Article({ article, number }) {
         <p>No article selected</p>
       ) : (
         <section id="quest">
-          <h2>{article.title}</h2>
+          <h3>{article.title}</h3>
           <PopUpOverlay quest={article}/>
           <div>
             {skullCount.map(index => 

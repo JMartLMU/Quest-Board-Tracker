@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import './css/Overlay.css'
 
 export default function PopUpOverlay({ quest }) {
   const [showOverlay, setShowOverlay] = useState(false);

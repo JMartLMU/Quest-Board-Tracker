@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Nav from "./Nav";
-import Article from "./Article";
-import './css/Overlay.css'
 
 export default function ArticleOverlay({ user, list, quest, setArticle }) {
   const [showOverlay, setShowOverlay] = useState(false);
