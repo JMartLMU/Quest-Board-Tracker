@@ -11,7 +11,7 @@ import {
   orderBy,
 } from "firebase/firestore"
 
-export async function createArticle({ title, body, danger, reward }) {
+export async function createArticle({ title, body, danger, reward }) {  
   const data = { title, body, danger, reward }
   const docRef = await addDoc(collection(db, "articles"), data)
   return { id: docRef.id, ...data }

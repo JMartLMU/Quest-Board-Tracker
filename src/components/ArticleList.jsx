@@ -15,8 +15,9 @@ export default function ArticleOverlay({ user, list, quest, setArticle }) {
         <>
           <div className="overlay">
             <div className="overlay-content">
+              <button onClick={() => setShowOverlay(false)}>Close</button>
               {!user ? "" : <Nav articles={list} setArticle={setArticle} />}
-              <Article article={quest} />
+              <Article number={list.length} article={quest} />
               <button onClick={() => setShowOverlay(false)}>Close</button>
             </div>
           </div>

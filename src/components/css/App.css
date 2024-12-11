@@ -1,18 +1,21 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background-image: url(./assets/Background.jpg);
+  background-size: contain;
 }
 
 .App {
-  display: grid;
-  grid-template-rows: min-content auto;
-  grid-template-columns: 250px auto;
-  height: 100vh;
-  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8vh;
 }
 
 header {
   display: flex;
+  width: 100vw;
   justify-content: space-between;
   background-color: black;
   color: white;
@@ -24,15 +27,6 @@ nav,
 article {
   height: 100%;
   padding: 10px;
-}
-
-nav {
-  background-color: #dee9ff;
-}
-
-nav p:hover {
-  text-decoration: underline;
-  cursor: pointer;
 }
 
 article .date {

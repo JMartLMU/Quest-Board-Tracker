@@ -42,3 +42,8 @@ form textarea {
   background-color: transparent;
   border-color: transparent;
 }
+
+nav p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
