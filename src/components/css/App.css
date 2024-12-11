@@ -1,6 +1,20 @@
+.jacquard-12-regular {
+  font-family: "Jacquard 12", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.medievalsharp-regular {
+  font-family: "MedievalSharp", cursive;
+  font-size: 90%;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 body {
+  font-family: "MedievalSharp";
   margin: 0;
-  font-family: Arial, sans-serif;
   background-image: url(./assets/Background.jpg);
   background-size: contain;
   overflow: hidden;
@@ -24,8 +38,8 @@ header {
   padding: 10px 5px;
 }
 
-.error {
-  background-color: red;
-  color: gold;
+.error, #error {
+  background-color: black;
+  color: red;
   padding: 5px;
 }

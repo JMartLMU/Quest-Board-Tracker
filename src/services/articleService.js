@@ -8,6 +8,8 @@ import {
   query,
   getDocs,
   addDoc,
+  deleteDoc,
+  doc,
   orderBy,
 } from "firebase/firestore"
 
@@ -26,4 +28,18 @@ export async function fetchArticles() {
     id: doc.id,
     ...doc.data(),
   }))
+}
+
+export async function deleteArticle({ id }) {  
+  try {
+    console.log({id})
+    await deleteDoc(doc(db, "articles", `${id}`));
+
+    console.log("Favorite Deleted:", {id});
+    return true;
+  } catch (error) {
+    console.error("Error deleting favorite:", error);
+
+  return false;
+  };
 }

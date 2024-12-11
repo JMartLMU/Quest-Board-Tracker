@@ -43,7 +43,7 @@ export default function App() {
       </header>
 
       {!user ? 
-        <p>Please Sign-In to View Quests</p> : <QuestBoard board={articles}/>}
+        <p id="error">Please Sign-In to View Quests</p> : <QuestBoard board={articles}/>}
     </div>
   )
 }

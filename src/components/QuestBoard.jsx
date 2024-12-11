@@ -9,7 +9,7 @@ export default function QuestBoard({ board }) {
                     <Article key={index} number={board.length} article={quest}/>
                 ))
             ) : (
-                "Nothing to display"
+                <p id="error">"Nothing to display"</p>
             )}
         </div>
     )

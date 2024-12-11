@@ -76,10 +76,15 @@ nav p:hover {
 
 button {
   border-radius: 10px;
+  background-color: grey;
+  font-family: "Jacquard 12";
   background-color: transparent;
   color: black;
 }
 
 header button {
   background-color: grey;
+  font-family: "Jacquard 12";
+  color: black;
+  text-shadow: 1x 1px black;
 }
